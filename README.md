@@ -24,4 +24,4 @@ Python as the programming language
 
 HTML, CSS for the frontend templates
 
-Pre-trained YOLOv3 weights (COCO dataset)
+Pre-trained YOLOv3 Dataset
