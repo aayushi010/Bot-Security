@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object Detection Dashboard</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 800;
+        font-style: normal;
+        background-color: #f0f2f5;
+        background-image: url("image.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        text-align: center;
+        min-height: 100vh; /* Full height */
+        display: flex;
+        flex-direction: column;
+      }
+      
+      nav {
+        background: #005f73;
+        color: white;
+        padding: 15px;
+      }
+      
+      main {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+      }
+      
+      .container {
+        position: relative;
+        width: 40vw;
+        height: 600px;
+        background: transparent;
+        border-radius: 12px;
+        padding: 2rem;
+      }
+      
+       #liveimg {
+        height : 40vh;
+        width: 50vh;
+        max-width: 400px;
+        margin: 1rem auto;
+        border: 4px solid #005f73;
+        border-radius: 10px;
+        box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+      }
+      
+      #liveimg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+      
+      #Home, #About {
+        padding: 10px 24px;
+        border: 4px solid white;
+        background: white;
+        border-radius: 999px; /* More curved */
+        cursor: pointer;
+        color: black;
+        height: 50px;
+        margin: 0 10px;
+      }
+      
+      #Home:active, #About:active {
+        transform: scale(0.95);
+      }
+      
+      footer {
+        background: #005f73;
+        color: white;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+      
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <h1>Safe Eye</h1>
+      <div>
+        <button id="Home">Home</button>
+        <button id="About">About</button>
+      </div>
+      <span> Status 🟢 </span>
+    </nav>
+
+    <main>
+      <section class="container">
+          <h2>
+            <img
+              id="liveimg"
+              width="100px"
+              height="100px"
+              src="{{ url_for('video') }}"
+            />
+          </h2>
+      </section>
+    </main>
+
+    <footer>
+      <span><p>Safe Eye || Status: Monitoring Conatct</p></span>
+    </footer>
+  </body>
+</html>
