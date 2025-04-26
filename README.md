@@ -13,7 +13,7 @@ This project uses YOLOv3 for object detection and Flask for the web frontend.
 
 5.Can be extended for use cases like fashion advice, plant identification, meme explanation, and more.
 <br><br>
-**🛠️ Technologies Used**<br><br>
+**Technologies Used**<br><br>
 YOLOv3 for object detection
 
 Flask for frontend and backend server
