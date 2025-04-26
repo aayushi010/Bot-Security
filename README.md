@@ -1,9 +1,9 @@
-**Vision-Powered Chatbot**
+**Vision-Powered Chatbot** <br>
 An intelligent chatbot that detects objects in uploaded images and interacts with users based on the detection results!
 This project uses YOLOv3 for object detection and Flask for the web frontend.
-
- **Features**
-📷 Upload an image — the chatbot detects objects inside it.
+<br>
+ **Features**<br>
+ Upload an image — the chatbot detects objects inside it.
 
 🧠 Interactive and smart conversation based on detected objects.
 
@@ -12,8 +12,8 @@ This project uses YOLOv3 for object detection and Flask for the web frontend.
 💬 Simple, fast web interface built with Flask.
 
 🔥 Can be extended for use cases like fashion advice, plant identification, meme explanation, and more.
-
-**🛠️ Technologies Used**
+<br>
+**🛠️ Technologies Used**<br>
 YOLOv3 for object detection
 
 Flask for frontend and backend server
