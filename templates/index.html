@@ -10,6 +10,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet"
     />
+
     <style>
       body {
         margin: 0;
@@ -17,8 +18,7 @@
         font-optical-sizing: auto;
         font-weight: 800;
         font-style: normal;
-        background-color: #f0f2f5;
-        background-image: url("image.jpg");
+        background-color: #d5c7ba;
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -27,13 +27,41 @@
         display: flex;
         flex-direction: column;
       }
-      
+
       nav {
         background: #005f73;
         color: white;
         padding: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-weight: 600;
       }
-      
+
+      .image {
+        display: flex;
+        align-items: center;
+      }
+
+      .image img {
+        height: 50px;
+        width: 50px;
+        object-fit: cover;
+      }
+
+      .image h1 {
+        margin-left: 10px;
+        font-size: 24px;
+        color: white;
+        line-height: 1;
+      }
+
+      nav div:last-child {
+        display: flex;
+        align-items: center;
+        gap: 10px; /* Space between buttons and status */
+        font-size: 18px;
+      }
       main {
         flex: 1;
         display: flex;
@@ -41,34 +69,88 @@
         align-items: center;
         padding: 2rem;
       }
-      
+
       .container {
         position: relative;
         width: 40vw;
         height: 600px;
-        background: transparent;
         border-radius: 12px;
         padding: 2rem;
       }
-      
-       #liveimg {
-        height : 40vh;
-        width: 50vh;
+      .container h2 {
+        font-size: 2.5rem;
+        color: rgb(15, 18, 18);
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+      .container h3 {
+        font-size: 1.5rem;
+        color: rgb(15, 18, 18);
+        text-align: center;
+        margin-bottom: 2rem;
+        font-family: URW Chancery L, cursive;
+        font-weight: 500;
+      }
+      #liveimg {
+        height: 40vh;
+        width: 80vh;
         max-width: 400px;
         margin: 1rem auto;
         border: 4px solid #005f73;
         border-radius: 10px;
-        box-shadow: 0 6px 8px rgba(0,0,0,0.3);
+        background: #005f73;
+        box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
       }
-      
+
       #liveimg {
         position: absolute;
-        top: 50%;
+        top: 60%;
         left: 50%;
         transform: translate(-50%, -50%);
       }
-      
-      #Home, #About {
+
+      #toogle-Home {
+        padding: 10px 24px;
+        border: 4px solid white;
+        background: white;
+        border-radius: 999px; /* More curved */
+        cursor: pointer;
+        color: black;
+        text-align: center;
+        height: 50px;
+        position: relative;
+        margin: 0 10px;
+        font-weight: 700;
+        font-size: 15px;
+      }
+      #About {
+        padding: 10px 24px;
+        border: 4px solid white;
+        background: white;
+        border-radius: 999px;
+        cursor: pointer;
+        color: black;
+        text-align: center;
+        height: 50px;
+        position: relative;
+        margin-right: 4px;
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .About-content a {
+        text-decoration: none;
+        color: black;
+        font-weight: 700;
+        font-size: 15px;
+      }
+      .About-content a:hover {
+        text-decoration: underline;
+      }
+      #toogle-Home:active,
+      #About:active {
+        transform: scale(0.95);
+      }
+      #toggle-status-btn {
         padding: 10px 24px;
         border: 4px solid white;
         background: white;
@@ -76,13 +158,10 @@
         cursor: pointer;
         color: black;
         height: 50px;
-        margin: 0 10px;
+        margin-left: 10px;
+        font-weight: 700;
       }
-      
-      #Home:active, #About:active {
-        transform: scale(0.95);
-      }
-      
+
       footer {
         background: #005f73;
         color: white;
@@ -91,35 +170,78 @@
         bottom: 0;
         width: 100%;
       }
-      
     </style>
   </head>
 
   <body>
     <nav>
-      <h1>Safe Eye</h1>
-      <div>
-        <button id="Home">Home</button>
-        <button id="About">About</button>
+      <div class="image">
+        <img
+          width="60"
+          src="{{ url_for('static', filename='final.png') }}"
+          alt="Logo"
+        />
+
+        <h1>Safe Eye</h1>
       </div>
-      <span> Status 🟢 </span>
+
+      <div>
+        <button id="toogle-Home">
+          <div>Home
+          </div>
+          </button>
+        <button id="About">
+          <div class="About-content">
+            <a href="https://github.com/aayushi010/Bot-Security">About</a>
+          </div>
+        </button>
+
+        <button id="toggle-status-btn">Switch</button>
+        <span id="status" style="color: green">🟢 </span>
+      </div>
     </nav>
 
     <main>
       <section class="container">
-          <h2>
-            <img
-              id="liveimg"
-              width="100px"
-              height="100px"
-              src="{{ url_for('video') }}"
-            />
-          </h2>
+        <h2>
+          Welcome to Safe-Eye!
+          <h3>Shield, Sophosticated and Secured</h3>
+          <img
+            id="liveimg"
+            width="100px"
+            height="100px"
+            src="{{ url_for('video') }}"
+          />
+        </h2>
       </section>
     </main>
 
     <footer>
-      <span><p>Safe Eye || Status: Monitoring Conatct</p></span>
+      <span
+        ><p>
+          Safe Eye || Status: Monitoring || Contact : company@gmail.com
+        </p></span
+      >
     </footer>
   </body>
+  <script>
+    const statusElement = document.getElementById("status");
+    const toggleButton = document.getElementById("toggle-status-btn");
+    let isOnline = true;
+
+    toggleButton.addEventListener("click", () => {
+      isOnline = !isOnline;
+
+      if (isOnline) {
+        statusElement.textContent = "🟢 Online";
+        statusElement.style.color = "green";
+      } else {
+        statusElement.textContent = "🔴Offline";
+        statusElement.style.color = "red";
+      }
+    });
+    document.getElementById("About").onclick = function () {
+      open.window("https://github.com/aayushi010/Bot-Security", "_blank");
+    };
+  </script>
 </html>
