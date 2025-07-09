@@ -1,0 +1,17 @@
+SAFE-EYE/
+├── README.md
+├── last_captured_image.jpg
+├── main.py
+├── rtod_ai.py
+├── seamless-fingerprint-line-pattern-black-260nw.jpg
+├── style.css
+├── temp_detected.jpg
+├── temp_frame.jpg
+├── tgbot.py
+├── __pycache__/
+│   └── tgbot.cpython-311.pyc
+├── static/
+│   └── last_captured_image.jpg
+└── templates/
+    ├── image.jpg
+    └── index.html
